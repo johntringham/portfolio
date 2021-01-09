@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+
+::selection {
+	background: #cccccc; /* Safari */
+	}
+::-moz-selection {
+	background: #cccccc; /* Firefox */
+}
+
+#title{
+	position:static;
+	width:280px;
+	float:none;
+	font-family:"Courier New", Courier, monospace;
+	background-color:#010741;
+	color:#FFFFFF;
+	font-style:italic;
+	padding:10px;
+	font-weight:500;
+	font-size:24px;	
+	text-decoration:none;
+	z-index:200;
+	text-align:center;
+	margin-top:0px;
+	top:0px;
+	margin-bottom:40px;
+	text-transform:lowercase;
+	margin-left:auto;
+	margin-right:auto;
+	//background-color:#FF0;
+}
+
+#mainpart {
+	position:absolute;
+	left:210px;
+	width:calc(100% - 210px);
+	margin-top:40px;
+	padding-bottom:40px;
+	text-align:justify;
+	overflow:visible;
+}
+
+#content {
+	position:static;
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
+	
+}
+
+#mainpart img {
+	margin-left:-200px;
+	margin-top:30px;
+	margin-bottom:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:1.5px solid #ccc;
+	border-top:1.5px solid #ccc;
+	height:auto;
+	width:700px;
+	overflow:visible;
+	text-align:center;
+}
+
+#mainpart a{
+	color:#000000;
+	text-decoration:underline;
+	font-weight:900;
+	z-index:0;
+}
+
+#mainpart a:hover,active {
+	background-color:#010741;
+	color:#FFFFFF;
+	font-style:italic;
+	font-weight:900;
+	text-decoration:none;
+	text-transform:uppercase;
+	z-index:200;
+}
+
+
+
+#sidebar {
+	position:fixed;
+	float:right;
+	size:9px;
+	color:#010741;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:11px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;
+	border-right:1x solid #7F7F7F;	
+	outline-right:10pt solid #ccc;
+	height:110%;
+	width:200px;
+	margin:0;
+	top:0px;
+	left:0px;
+	line-height:300%;
+	background-color:#EFEFF8;
+	z-index:100;
+	//text-align:right;
+}
+
+#sidetop {
+	border-bottom:1pt solid #ccc;	
+	color:#010741;
+	padding-bottom:4px;
+}
+
+body {
+	background-color:#FDFDFD;
+	color:#010741;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:11px;
+}
+
+
+
+#sidebar a{
+	font-family:'Courier New', Courier, monospace;
+	color:#000000;
+	z-index:0;
+}
+
+#sidebar a:hover,active {
+	background-color:#010741;
+	color:#FFFFFF;
+	font-style:italic;
+	padding:10px;
+	font-weight:900;
+	font-size:24px;
+	text-decoration:none;
+	z-index:200;
+}

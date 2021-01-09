@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style.css" />
+<title>john tringham</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body>
+
+<div id="sidebar">
+<div id="sidetop">
+john tringham portfolio</div>
+<br /><br />
+<a href="aaa">about</a><br />
+<a href="aaa">comics</a><br />
+<a href="aaa">personal</a><br />
+<a href="aaa">twitter</a><br />
+<a href="aaa">blog</a><br />
+<a href="aaa">contact</a><br /><a href="aaa">stuff</a><br />
+
+</div>
+
+<div id="mainpart">
+<div id="title">about</div>
+<div id="content">
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia quam nec purus aliquet, eget egestas lacus dapibus. Vestibulum mauris massa, auctor et posuere pharetra, suscipit in est. Quisque aliquam dictum odio id ultricies. Duis eu pharetra leo. Suspendisse blandit tempor purus, non malesuada lacus consequat in. Nam ullamcorper libero in placerat cursus. Nulla sed arcu nec quam commodo tristique. <a>Pellentesque</a> sed nibh id nunc feugiat pulvinar ut non urna. Donec malesuada ante vitae sodales porta. Proin facilisis lectus ut laoreet scelerisque. Morbi vehicula convallis ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut vehicula, ligula a mollis aliquet, arcu nisl mollis urna, vel ornare neque eros vitae turpis. Duis a lectus ac odio aliquam feugiat. Nunc rutrum viverra enim, a mattis tellus tempus non. Proin eget ante tempor, suscipit turpis egestas, interdum magna.
+</p>
+<img src="http://www.zappablamma.com/zb/wp-content/uploads/2013/08/ikea.png" />
+<p>
+Morbi auctor facilisis elit vitae posuere. Ut luctus felis turpis, commodo ultrices mi mattis vel. Fusce dictum in diam id ultricies. In blandit convallis purus. Nulla pellentesque porta libero, at dapibus velit egestas sit amet. Cras vehicula bibendum nisi quis dapibus. Morbi laoreet, sapien vel ultricies eleifend, neque nunc sollicitudin risus, et elementum lectus purus eu leo.
+
+Sed dignissim elit quis ligula posuere, ac lobortis enim blandit. Proin rutrum turpis tellus, eu fermentum leo tristique quis. Cras eleifend sed turpis eu pretium. Mauris vel dolor eu mi consequat auctor non sit amet magna. Curabitur lobortis vulputate odio vel bibendum. Nulla at libero mattis sem pulvinar congue a sed enim. Pellentesque at massa id enim porttitor iaculis. Nulla ornare tincidunt ultricies. <a href="ddd">Nam</a> accumsan varius magna, ultrices rhoncus dolor dictum quis. Pellentesque non nulla lacus. Fusce ullamcorper augue et condimentum molestie. Donec commodo vehicula nisi, sit amet tempus lorem vehicula et. Suspendisse non varius felis. In pharetra sagittis varius. Donec malesuada libero quis tincidunt commodo.
+
+Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Aenean ac augue vitae lectus semper pulvinar in sed ante. Phasellus at luctus nisl, nec dignissim tellus. Donec ultrices lorem diam, eu gravida ante egestas id. Mauris egestas est et tincidunt venenatis. Aenean nec congue dolor. Maecenas rhoncus tortor a dapibus cursus. Vivamus interdum nisl enim, non commodo tortor pretium at. Morbi sodales ligula urna, ut suscipit turpis malesuada a. Nulla placerat, sem sit amet euismod condimentum, lorem metus tincidunt felis, vel euismod urna lorem ac sem. Nunc interdum sapien eget tortor luctus luctus. Nam in convallis ligula, nec lacinia purus. Nullam tincidunt, dolor scelerisque pretium faucibus, nisl mauris suscipit sapien, sit amet rutrum metus odio a libero. In venenatis quis lectus eu ornare.
+
+Ut posuere tincidunt risus eu consequat. Nullam in ipsum vel quam condimentum eleifend ac eu nisl. In ligula quam, imperdiet quis tempus ac, auctor et nisl. Phasellus arcu risus, vehicula ultricies eros eu, ultrices bibendum ante. Ut sit amet sollicitudin risus. Duis risus dui, tempus posuere tortor luctus, suscipit bibendum enim. Nunc blandit elit dolor, at ornare mauris mattis et. Maecenas interdum et ipsum eu consectetur. Nulla auctor porta lacus, nec fermentum sem aliquam at. Aenean adipiscing turpis ligula, non facilisis sapien rutrum sed.
+</p>
+</div>
+</div>
+
+<script language="javascript" type="text/javascript">
+function fixDiv() {
+    var $div = $("#title");
+    if ($(window).scrollTop() > $div.data("top")) { 
+        $('#title').css({'position': 'fixed', 'top': '0', 'left': 'calc(50% - 15px)'});
+		$('#content').css({'position': 'static', 'margin-top': '88px'});
+    }
+    else {
+        $('#title').css({'position': 'static', 'top': 'auto'});
+		$('#content').css({'position': 'static', 'margin-top': 'auto'});
+    }
+}
+
+$("#title").data("top", $("#title").offset().top); // set original position on load
+$(window).scroll(fixDiv);
+
+
+function fixImageSize (){
+	var wid = $(window).width() - 400;
+	if(wid > 300){
+		$('#content img').css({'max-width': wid});
+	}else{
+		$('#content img').css({'max-width': 300});
+	}
+}
+
+fixImageSize();
+$(window).resize(fixImageSize);
+</script>
+</body>
+</html>

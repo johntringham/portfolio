@@ -1,0 +1,94 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css'>
+	<title>john tringham</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="sidebar" class="col-lg-2 col-md-4 col-sm-12 col-xs-12"> <!--id="sidebar"-->
+				<div id="sidetop">
+					john tringham portfolio</div>
+				<a href="#" onclick="switchTo('aboutme.html')">about</a><br />
+				<a href="#" onclick="switchTo('comics.html')">comics</a><br />
+				<a href="#" onclick="switchTo('programming.html')">programming</a><br />
+				<a href="#" onclick="switchTo('art.html')">art</a><br />
+				<a href="http://www.zappablamma.com/zb">blog</a><br />
+				<a href="#" onclick="switchTo('contact.html')">contact</a><br />
+			</div>
+
+			<div id="mainpart" class="col-lg-10 col-md-8 col-sm-12 col-xs-12"> <!--id="mainpart"-->
+				<div id="title"></div>
+				<div id="content">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script language="javascript" type="text/javascript">
+		$("#title").data("top", $("#title").offset().top); // set original position on load
+
+		function fixImageSize() {
+			var wid = $(window).width() - 400;
+			var hei = $(window).height() - 120;
+
+			$('#content img').css({ 'max-height': Math.max(hei, 200) });
+			$('#content img').css({ 'max-width': Math.max(wid, 300) });
+			$('#content video').css({ 'max-height': Math.max(hei, 200) });
+			$('#content video').css({ 'max-width': Math.max(wid, 300) });
+		}
+
+		function switchTo(page) {
+			let content = $('#content');
+			content.animate({opacity : 0}, 500, function() { 
+			if (page == "") {
+				page = "aboutme.html";
+			}
+			if (page != "") {
+				$.get(page).done(function (data) {
+					document.getElementById('content').innerHTML = data;
+					fixImageSize();
+					content.animate({opacity : 1}, 500);
+				});
+			}
+			});
+		}
+
+		function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+			return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		switchTo("aboutme.html");
+		
+		$(window).resize(fixImageSize);
+
+		fixImageSize();
+	</script>
+</body>
+
+</html>
