@@ -42,17 +42,22 @@
 	/* padding-bottom:40px; */
 	text-align:justify;
 	overflow:visible;
+	margin-top:50px;
 	/* width:calc(100% - 270px); */
 }
 
-#content {
-	margin-top:50px;
-}
-
-#content p {
+#singlecolumncontent p {
 	margin-left:auto;
 	margin-right:auto;
 	width:299px;
+}
+
+.widercolumncontent p {
+	margin-left:auto;
+	margin-right:auto;
+	max-width:400px;
+	text-align: justify;
+	text-align-last: center;
 }
 
 #mainpart img {
@@ -176,4 +181,9 @@ body {
     border-bottom-style: solid;
     border-width: 5px;
     border-color:#000;
+}
+
+.portraitvideo {
+	width:640px;
+	height:800px;
 }

@@ -31,12 +31,12 @@
 			<div id="sidebar" class="col-lg-2 col-md-4 col-sm-12 col-xs-12"> <!--id="sidebar"-->
 				<div id="sidetop">
 					john tringham portfolio</div>
-				<a href="#" onclick="switchTo('aboutme.html')">about</a><br />
-				<a href="#" onclick="switchTo('comics.html')">comics</a><br />
-				<a href="#" onclick="switchTo('programming.html')">programming</a><br />
-				<a href="#" onclick="switchTo('art.html')">art</a><br />
+				<a href="#aboutme" onclick="switchTo('aboutme.html')">about</a><br />
+				<a href="#comics" onclick="switchTo('comics.html')">comics</a><br />
+				<a href="#programming" onclick="switchTo('programming.html')">programming</a><br />
+				<a href="#art" onclick="switchTo('art.html')">art</a><br />
 				<a href="http://www.zappablamma.com/zb">blog</a><br />
-				<a href="#" onclick="switchTo('contact.html')">contact</a><br />
+				<a href="#contact" onclick="switchTo('contact.html')">contact</a><br />
 			</div>
 
 			<div id="mainpart" class="col-lg-10 col-md-8 col-sm-12 col-xs-12"> <!--id="mainpart"-->
@@ -67,11 +67,17 @@
 				page = "aboutme.html";
 			}
 			if (page != "") {
-				$.get(page).done(function (data) {
+				var request = $.get(page);
+				
+				request.done(function (data) {
 					document.getElementById('content').innerHTML = data;
 					fixImageSize();
 					content.animate({opacity : 1}, 500);
 				});
+
+				request.error(function(data){
+					switchTo("aboutme.html");
+				})
 			}
 			});
 		}
@@ -83,8 +89,14 @@
 			return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 		}
 
-		switchTo("aboutme.html");
-		
+		var hash = window.location.hash;
+		if(hash != ""){
+			var page = hash.substring(1) + ".html";
+			switchTo(page);
+		}else{
+			switchTo("aboutme.html");
+		}
+
 		$(window).resize(fixImageSize);
 
 		fixImageSize();
