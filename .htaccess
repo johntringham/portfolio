@@ -1,3 +1,0 @@
-DirectoryIndex index.html
-RewriteEngine On
-RewriteRule ^/zb/portfolio/a/$ /zb/portfolio/
