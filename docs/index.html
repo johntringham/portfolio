@@ -1,0 +1,144 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<!--
+
+	Hi!
+
+	If you're here to look at the source code here because you're assessing how I code,
+	I'd recommend looking at other projects! This website was first made about 10 years ago, and I've been
+	occassionally adding to it, but have never got round to completely overhauling it. 
+	
+	Please don't judge me for how old messy it is!
+
+	- John
+
+-->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ0V2HTKF7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GZ0V2HTKF7');
+</script>
+
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css'>
+	<title>John Tringham</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Staatliches&display=swap" rel="stylesheet">
+		
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+</head>
+
+<body>
+	<div id="sidetop"><a href="/#" id="titlelink">John Tringham Portfolio</a></div>
+		<div class="container-fluid">
+			<div id="sidebar" class="d-flex flex-wrap justify-content-center">
+			<!-- <div id="sidebar" class="col-xl-2 col-lg-4 col-md-12 col-sm-12 col-xs-12"> id="sidebar" -->
+				<div class = "cl-md-4"><a href="#aboutme" onclick="switchTo('aboutme.html')">about</a></div>
+				<!-- <div class = "cl-md-4"><a href="#comics" onclick="switchTo('comics.html')">comics</a></div> -->
+				<div class = "cl-md-4"><a href="#programming" onclick="switchTo('programming.html')">programming</a></div>
+				<div class = "cl-md-4"><a href="#games" onclick="switchTo('games.html')">games</a></div>
+				<div class = "cl-md-4"><a href="#art" onclick="switchTo('art.html')">art</a></div>
+				<!-- <div class = "cl-md-4"><a href="http://www.zappablamma.com/zb">blog</a></div> -->
+				<div class = "cl-md-4"><a href="http://blog.seedganggames.com">blog</a><br /></div>
+				<div class = "cl-md-4"><a href="#contact" onclick="switchTo('contact.html')">contact</a><br /></div>
+			<!-- </div> -->
+			</div>
+			<div class="row">
+			<div id="mainpart" class="col-md-12">
+					<div id="content">
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<script language="javascript" type="text/javascript">
+
+		function fixImageSize() {
+			var wid = Math.min(1140, $(window).width() - 60);
+			var hei = $(window).height();
+
+			// $('#content .resizeme').css({ 'max-height': Math.max(hei, 200) });
+			$('#content .resizeme').css({ 'max-width': Math.max(wid, 100) });
+
+			$('#content .resizeme-3').css({ 'max-height': Math.max(hei, 200) });
+			$('#content .resizeme-3').css({ 'max-width': Math.max(wid / 3 - 20, 100) });
+
+			// $('#content img').css({ 'max-height': Math.max(hei, 200) });
+			// $('#content img').css({ 'max-width': Math.max(wid, 300) });
+			// $('#content video').css({ 'max-height': Math.max(hei, 200) });
+			// $('#content video').css({ 'max-width': Math.max(wid, 300) });
+		}
+
+		function switchTo(page) {
+			let content = $('#content');
+			content.animate({opacity : 0}, 500, function() { 
+			if (page == "") {
+				page = "aboutme.html";
+			}
+			if (page != "") {
+				var request = $.get(page);
+				
+				request.done(function (data) {
+					document.getElementById('content').innerHTML = data;
+					fixImageSize();
+					content.animate({opacity : 1}, 500);
+				});
+
+				request.error(function(data){
+					switchTo("aboutme.html");
+				})
+			}
+			});
+		}
+
+		function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+			return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		var hash = window.location.hash;
+		if(hash != ""){
+			var page = hash.substring(1) + ".html";
+			switchTo(page);
+		}else{
+			switchTo("aboutme.html");
+		}
+
+		$(window).resize(fixImageSize);
+
+		fixImageSize();
+	</script>
+</body>
+
+</html>

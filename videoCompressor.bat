@@ -1,1 +1,0 @@
-ffmpeg -i %1 -b 5000k -an %1.output.mp4

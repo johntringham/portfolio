@@ -1,5 +1,0 @@
-<IfModule mod_rewrite.c>
-#Redirect 301 /zb/portfolio/about http://www.zappablamma.com/zb/portfolio/
-RewriteEngine on
-RewriteRule ^zb/portfolio/about/product$ http://www.zappablamma.com/zb/portfolio/
-</IfModule>
