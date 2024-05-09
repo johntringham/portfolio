@@ -72,8 +72,6 @@
 	padding-bottom:10px;
 	border-bottom:1.5px solid #ccc;
 	border-top:1.5px solid #ccc;
-	height:auto;
-	width:auto;
 	overflow:visible;
 	text-align:center;
 }
@@ -120,6 +118,7 @@
 	font-family: "Staatliches";
 	font-size:55px;
 	color:#444;	
+	line-height: normal;
 }
 
 #sidebar {
@@ -210,3 +209,18 @@ body {
 .youtube {
 	text-align: center;
 }
+
+.multiimage{ 
+	width: 100% !important;
+    height: auto !important;
+}
+
+.multiimage video { 
+	width: 100% !important;
+    height: auto !important;
+}
+
+.centerItem {
+	margin:auto;
+}
+
