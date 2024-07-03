@@ -152,15 +152,13 @@
 	padding-bottom:4px;
 	margin-bottom:30px;
 	text-align: center;
-	background-color:#000;
 	color:#FFFFFF;
-
 	padding:10px;
 	font-size:22px;
 	text-decoration:underline;
 	padding-bottom:5px;
     border-bottom-style: solid;
-    border-width: 5px;
+    border-width: 1px;
     border-color:#000;
 
 	font-weight:900;
@@ -179,22 +177,16 @@ body {
 	margin-right:2px;
 	margin-top:150px;
 	font-family:"Staatliches", "Courier New", Courier, monospace;
-	background-color:#666;
-	color:#FFFFFF;
-	/* font-style:italic; */
+	color:#444;
 	padding:10px;
-	/* font-weight:900; */
 	font-size:22px;
-	/* text-decoration:overline; */
 	padding-bottom:5px;
-    border-bottom-style: solid;
-    border-width: 5px;
-    border-color:#000;
 	line-height: 2.2;
 }
 
 #sidebar a:hover,active {
-	background-color:#000;
+	color:#000;
+	text-decoration: underline;
 }
 
 .portraitvideo {
@@ -203,7 +195,7 @@ body {
 }
 
 #titlelink {
-	color:#eee;
+	color:#000;
 }
 
 .youtube {
@@ -224,3 +216,8 @@ body {
 	margin:auto;
 }
 
+icon {
+	font-size: 10pt;
+  vertical-align: middle;
+  padding-bottom: 6px;
+}
